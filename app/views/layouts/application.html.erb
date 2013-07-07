@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Addspice</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <header>
+        <div class="row">
+            <div class="eight columns">
+                <h1>H1 Header</h1>
+            </div>
+        </div>
+    </header>
+    
+    <div class="wrapper">
+      <div class="row">
+    	  <section class="eight columns centered">
+          <div class="content">
+            <%= yield %>
+          </div>
+        </section>
+      </div>
+      <div class="sticky-footer"></div>
+    </div><!-- end of wrapper -->    
+    
+    <footer>
+        <div class="row">
+            <div class="twelve columns">
+                <p>footer</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

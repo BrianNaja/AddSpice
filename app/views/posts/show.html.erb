@@ -1,0 +1,8 @@
+<article>
+  <h3><%= @post.title %></h3>
+  <p><%= markdown(@post.text).html_safe %></p>
+  <%= link_to 'Back', posts_path %> | 
+  <span class="edit"><%= link_to 'Edit', edit_post_path(@post) %> | </span>
+  <span class="destroy"><%= link_to 'Destroy', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %></span>
+</article>
+<hr>    
