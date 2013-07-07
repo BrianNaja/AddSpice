@@ -1,15 +1,15 @@
 class PostsController < ApplicationController
-
-  
  
   def index
-    @posts = Post.all
+    @posts = Post.all.reverse
   end
+  
   
   def new
     @post = Post.new
   end
  
+  
   def create
     @post = Post.new(params[:post].permit(:title, :text))
  
@@ -20,13 +20,16 @@ class PostsController < ApplicationController
     end
   end
   
+  
   def show
     @post = Post.find(params[:id])
   end
   
+  
   def edit
     @post = Post.find(params[:id])
   end
+  
   
   def update
     @post = Post.find(params[:id])
@@ -37,6 +40,7 @@ class PostsController < ApplicationController
       render 'edit'
     end
   end
+  
   
   def destroy
     @post = Post.find(params[:id])
@@ -52,3 +56,7 @@ class PostsController < ApplicationController
   end
 
 end
+
+
+
+
