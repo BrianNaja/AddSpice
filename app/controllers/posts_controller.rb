@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   http_basic_authenticate_with name: ENV["ADDSPICE_USERNAME"], password: ENV["ADDSPICE_PASSWORD"], except: [:index, :show]
  
   def index
-    @posts = Post.all.reverse
+    @post = Post.limit(3).order("created_at DESC")
   end
   
   
