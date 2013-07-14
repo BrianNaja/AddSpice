@@ -1,6 +1,6 @@
 <% @tag.each do |tag| %>
 <article>
-  <p><%= tag.name %></p>
+  <p><%= link_to tag.name, tag_path(tag)  %></p>
   <span class="destroy"><%= link_to 'Destroy', tag_path(tag), method: :delete, data: { confirm: 'Are you sure?' } %></span>
 </article>
 <hr>

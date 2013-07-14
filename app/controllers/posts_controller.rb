@@ -11,8 +11,7 @@ class PostsController < ApplicationController
     @post = Post.new
   end
  
-  
-  def create
+    def create
     @post = Post.new(params[:post].permit(:title, :text, :tag_list))
  
     if @post.save
@@ -55,8 +54,7 @@ class PostsController < ApplicationController
   private
     def post_params
       params.require(:post).permit(:title, :text, :tag_list)
-
-  end
+    end
 
 end
 
