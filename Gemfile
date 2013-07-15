@@ -8,6 +8,7 @@ gem 'sqlite3'
 
 # My Added Gems
 gem 'redcarpet'
+gem 'carrierwave'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

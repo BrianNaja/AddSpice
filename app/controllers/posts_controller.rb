@@ -1,6 +1,4 @@
 class PostsController < ApplicationController
-
-  http_basic_authenticate_with name: ENV["ADDSPICE_USERNAME"], password: ENV["ADDSPICE_PASSWORD"], except: [:index, :show]
  
   def index
     @post = Post.limit(3).order("created_at DESC")
@@ -12,7 +10,7 @@ class PostsController < ApplicationController
   end
  
     def create
-    @post = Post.new(params[:post].permit(:title, :text, :tag_list))
+    @post = Post.new(params[:post].permit(:title, :text, :tag_list, :image))
  
     if @post.save
       redirect_to @post
@@ -35,7 +33,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
  
-    if @post.update(params[:post].permit(:title, :text, :tag_list))
+    if @post.update(params[:post].permit(:title, :text, :tag_list, :image))
       redirect_to @post
     else
       render 'edit'
@@ -53,7 +51,7 @@ class PostsController < ApplicationController
 #This new approach below prevents an attacker from setting the model's attributes by manipulating the hash passed to the model. 
   private
     def post_params
-      params.require(:post).permit(:title, :text, :tag_list)
+      params.require(:post).permit(:title, :text, :tag_list, :image)
     end
 
 end
