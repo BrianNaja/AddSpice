@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
  
     def create
-    @post = Post.new(params[:post].permit(:title, :text, :tag_list, :image))
+    @post = Post.new(params[:post].permit(:title, :text, :tag_list, :image, :remove_image))
  
     if @post.save
       redirect_to @post
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
  
-    if @post.update(params[:post].permit(:title, :text, :tag_list, :image))
+    if @post.update(params[:post].permit(:title, :text, :tag_list, :image, :remove_image))
       redirect_to @post
     else
       render 'edit'
@@ -51,7 +51,7 @@ class PostsController < ApplicationController
 #This new approach below prevents an attacker from setting the model's attributes by manipulating the hash passed to the model. 
   private
     def post_params
-      params.require(:post).permit(:title, :text, :tag_list, :image)
+      params.require(:post).permit(:title, :text, :tag_list, :image, :remove_image)
     end
 
 end

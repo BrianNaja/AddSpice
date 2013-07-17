@@ -7,7 +7,7 @@
     <% end %>
   </p>
   
-  <%= image_tag @post.image_url.to_s %>
+  <%= image_tag @post.image_url(:thumb).to_s %>
 
   <p><%= markdown(@post.text).html_safe %></p>
   

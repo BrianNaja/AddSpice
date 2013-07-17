@@ -8,6 +8,7 @@ gem 'sqlite3'
 
 # My Added Gems
 gem 'redcarpet'
+gem 'rmagick'
 gem 'carrierwave'
 
 # Use SCSS for stylesheets

@@ -1,4 +1,7 @@
 <h1>Editing post</h1>
+ <p>Current Image<br>
+  <%= image_tag @post.image_url.to_s %>
+ </p>
  
 <%= render 'form' %>
  
