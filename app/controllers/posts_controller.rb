@@ -13,7 +13,8 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post].permit(:title, :text, :tag_list, :image, :remove_image))
  
     if @post.save
-      redirect_to @post
+      redirect_to @post,
+        :notice => "Great recipe your Awesome!"
     else
       render 'new'
     end
@@ -34,7 +35,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
  
     if @post.update(params[:post].permit(:title, :text, :tag_list, :image, :remove_image))
-      redirect_to @post
+      redirect_to @post,
+        :notice => "Your recipe has been updated."
     else
       render 'edit'
     end
@@ -45,7 +47,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
  
-    redirect_to posts_path
+    redirect_to posts_path,
+      :alert => "That recipe has been destroyed forever."
   end
 
 #This new approach below prevents an attacker from setting the model's attributes by manipulating the hash passed to the model. 

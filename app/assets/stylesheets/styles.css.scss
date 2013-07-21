@@ -581,13 +581,45 @@ clear: both;
 
 }
 
+/* !Recipe */
+
 .edit a {
-  color: #65ac5e;
+  background-color: #f39c12;
+  padding: 4px 10px;
+  color: #ffffff;
+  border-radius: 2px;
 }
 
 .destroy a {
-  color: #ca3a3a;
+  background-color: #c0392b;
+  padding: 4px 10px;
+  color: #ffffff;
+  border-radius: 2px;
 }
+
+.back a {
+  background-color: #397eff;
+  padding: 4px 10px;
+  color: #ffffff;
+  border-radius: 2px;
+}
+
+.flash-notice {
+  color: #65ac5e;
+}
+
+.flash-alert {
+  color: #c0392b;
+}
+
+.create-recipe a {
+  background-color: #65ac5e;
+  padding: 6px 10px;
+  color: #ffffff;
+  border-radius: 2px;
+}
+
+/* !Recipe End */
 
 /*!Sticky Footer*/
 
