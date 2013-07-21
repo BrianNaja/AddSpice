@@ -1,7 +1,12 @@
 class PostsController < ApplicationController
+ before_filter :authenticate, :except => [:index, :show]
  
   def index
     @post = Post.limit(3).order("created_at DESC")
+  end
+  
+  def admin
+    @post = Post.limit(10).order("created_at DESC")
   end
   
   

@@ -1,10 +1,10 @@
 <article>
   <h2><%= @post.title %></h2>
-  
+<% if admin? %>
   <div class="flash-notice">
     <p><%= notice %></p>
   </div>
-  
+<% end %>  
   <p>Tags:
     <% @post.tags.each do |tag| %>
       <%= link_to tag.name, tag_path(tag) %>
@@ -14,9 +14,10 @@
   <%= image_tag @post.image_url(:medium).to_s %>
 
   <p><%= markdown(@post.text).html_safe %></p>
-  
+<% if admin? %>  
   <span class="back"><%= link_to 'Back', posts_path %></span>
   <span class="edit"><%= link_to 'Edit', edit_post_path(@post) %></span>
   <span class="destroy"><%= link_to 'Destroy', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %></span>
+<% end %>
 </article>
 <hr>

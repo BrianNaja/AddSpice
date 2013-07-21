@@ -7,8 +7,10 @@ group :development do
   gem 'sqlite3'
 end
 
+# Thin web server for a production app
 group :production do
-  gem 'mysql2'
+  gem 'pg'
+  gem 'thin'
 end
 
 # My Added Gems
